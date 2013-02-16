@@ -1,5 +1,5 @@
 /* WHAT PROG DOES : 
- * Simple Prog doing "Selection Sort"
+ * Simple Prog doing "Selection Sort", sorts nos in ascending order
  *
  * NOTES : 
  * Here I have included one function stored in common file in previous folder, which I intend to use everywhere.
@@ -21,7 +21,6 @@ void selection_sort( int *arr , int arr_size ){
 		temp=first;
 		last=first+1;
 
-
 		for( j=i+1 ; j<arr_size ; j++, last++ ){
 			if( *last<*temp )
 				temp=last;
@@ -41,8 +40,8 @@ void selection_sort( int *arr , int arr_size ){
 /*********************************************************************/
 
 int main(){
-	int arr[]={-8, -7,-5,-3,0,2};
-	int arr_size=5;
+	int arr[]={3,4,3,4,3,4,3,4,3};
+	int arr_size=8;
 
 	selection_sort( arr, arr_size );
 	print_array( arr, arr_size );
