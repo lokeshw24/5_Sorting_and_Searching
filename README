@@ -1,0 +1,9 @@
+Contains codes from Chapter 5, from Dromey's Book.
+
+Inside this main folder, are many sub-folders, each of them a separate chapter,as given in book.
+Basically, the entire directory structure henceforth is exactly similar to the one given in Dromey.
+
+Nevertheless, there is no need to have Dromey's Book with you.Inside every code,I have written the problem-statment, what the code does.
+All codes are __sufficiently__ commented !!
+
+The testing of every code is not done "robustly" !
