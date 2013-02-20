@@ -6,8 +6,10 @@
 
 void print_array( int arr[] , int arr_size ){
 	int i=0 ;
+	arr_size++;
+
 	printf("[ ");
-	for( i=0 ; i<=arr_size; i++ )
+	for( i=0 ; i<arr_size; i++ )
 		printf("%d ", arr[i] );
 
 	printf("]\n");
