@@ -1,6 +1,7 @@
 /*WHAT PROG DOES :
  * Count the avg "shift" of an element from its original position after getting sorted.
- * Here in order to have a count for each element, I m putting the every element in a node.
+ * Here in order to have a count for each element, I m putting the every element in a node,
+ * and maintaining a counter for everyone.
  *
  */
 
@@ -53,20 +54,15 @@ void insertion_sort( node *array_ptr , int arr_size ){
 				while(temp!=first){
 					(temp->count)++;
 					/*now swap 2 nodes */
-					//tt.num=temp->num;
-					//tt.count=temp.count;
-
 					((temp+1)->num)=((temp)->num);
 					((temp+1)->count)=((temp)->count);
-
-					//(temp+1)->num=tt.num;
-					//(temp+1)->count=tt.count;
 					/*done with swapping */
 
 					--temp;
 					++last_cou ;
 				}
 				/*now , for one last time....swap 2 nodes */
+				(temp->count)++;
 				((temp+1)->num)=((temp)->num);
 				((temp+1)->count)=((temp)->count);
 				/*done with swapping */
@@ -76,24 +72,36 @@ void insertion_sort( node *array_ptr , int arr_size ){
 
 			}
 			first++;
-		}
+		}//end while
+
 
 	}//end for
 }
 /*********************************************************************/
 
 int main(){
-	int arr[]={14, 35,3, 8 ,20, 41,18, 39 };
-	int arr_size=7;
+	int arr[]={-9,33,-222};
+	int arr_size=2;
 	node array_nodes[arr_size];
 
 	init_nodes( array_nodes , arr, arr_size );
 	print_nodes( array_nodes , arr_size );
 
-
 	insertion_sort( array_nodes , arr_size );
+
+	/*Make -ve values +ve */
+	int i, temp ;
+	for(i=0 ; i<=arr_size ; i++ )
+		if( array_nodes[i].count < 0 )
+			array_nodes[i].count*=(-1) ;
+
 	print_nodes( array_nodes , arr_size );
-	//print_array( arr, arr_size );
+
+	/*now lets find the avg distance travelled by every element */
+	for( i=0,temp=0 ; i<=arr_size ; i++ )
+		temp+=array_nodes[i].count ;
+
+	printf("Avg dist travelled by every element : %f \n", (float)temp/arr_size );
 
 return 0;
 
