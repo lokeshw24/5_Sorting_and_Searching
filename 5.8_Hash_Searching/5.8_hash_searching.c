@@ -110,6 +110,17 @@ void init_arr( int *arr , int arr_size ){
 	OVERFLOW_flag=FALSE;
 }
 /***************************************************/
+void delete( int *arr , int arr_size , int val_to_delete ){
+	int position = search_into_arr( arr , arr_size , val_to_delete);
+	if( position==-1 ){
+		printf("Num doesnt exist !! \n");
+		return ;
+	}
+
+	*(arr+position )=INT_MAX ;
+
+}
+/***************************************************/
 
 int main(){
 	int arr_size=7 ;
